@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 모바일 기기 접속시 화면 크기 조절을 위해 뷰포트로 설정 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      maximum-scale="1,"
+      user-scalable="no,"
+      minimal-ui
+    />
+    <!-- vuetify.js 에 필요한 스타일 파일 링크 연결 -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <title>카드 UI</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 첫 화면의 시작은 v-app 엘리먼트 사용 -->
+      <v-app>
+        <!-- 앱바 색상을 파란색(primary)으로 설정하고 fixed로 위치 고정 -->
+        <v-app-bar app color="primary" dark fixed>
+          <!-- 왼쪽에 메뉴 아이콘 넣음 -->
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          <v-toolbar-title>카드 UI</v-toolbar-title>
+          <!-- 오른쪽에 추가 메뉴 아이콘을 넣기 위해 v-spacer 엘리먼트 사용 -->
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </v-app-bar>
+        <v-content>
+          <v-container>
+            <!-- 카드 UI 사용을 선언하는 v-card 엘리먼트 -->
+            <v-card max-width="400">
+              <!-- 카드 상단에 이미지 배치 -->
+              <v-img
+                src="https://picsum.photos/400/300"
+                aspect-ratio="2.3"
+              ></v-img>
+              <!-- 카드 중간에 텍스트 배치 -->
+              <v-card-text>
+                <div>
+                  <!-- 제목으 타이포그래피 스타일 title로 설정 -->
+                  <!-- 하단의 margin을 2로 설정 -->
+                  <h2 class="title primary-text mb-2">Lorem</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
+                    a maxime quia, quo neque libero ipsum corrupti omnis eaque
+                    porro?
+                  </p>
+                </div>
+              </v-card-text>
+              <!-- 카드 하단에 버튼 배치 -->
+              <v-card-actions>
+                <!-- 버튼 색상 빨간색으로 설정 -->
+                <v-btn color="red white--text">확인</v-btn>
+                <!-- outline으로 버튼의 배경색 없앰 -->
+                <v-btn outlined color="red">취소</v-btn>
+                <v-btn background-color="#9c27b0">초기화</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-container>
+        </v-content>
+        <!-- footer 색상을 secondary로 설정하고 fixed로 위치 고정 -->
+        <v-footer color="secondary" dark fixed>
+          <!-- mx-auto는 블록 레벨 엘리먼트의 내용을 가운데 정렬 -->
+          <div class="mx-auto">Copyright &copy;</div>
+        </v-footer>
+      </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+      });
+    </script>
+  </body>
+</html>

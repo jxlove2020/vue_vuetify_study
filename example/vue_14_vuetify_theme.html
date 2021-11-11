@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 모바일 기기 접속시 화면 크기 조절을 위해 뷰포트로 설정 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      maximum-scale="1,"
+      user-scalable="no,"
+      minimal-ui
+    />
+    <!-- vuetify.js 에 필요한 스타일 파일 링크 연결 -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <title>Vuetify Theme</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 첫 화면의 시작은 v-app 엘리먼트 사용 -->
+      <v-app>
+        <!-- 앱바 색상을 파란색(primary)으로 설정하고 fixed로 위치 고정 -->
+        <v-app-bar app color="primary" dark fixed>
+          <!-- 왼쪽에 메뉴 아이콘 넣음 -->
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          <v-toolbar-title>마스터 페이지</v-toolbar-title>
+          <!-- 오른쪽에 추가 메뉴 아이콘을 넣기 위해 v-spacer 엘리먼트 사용 -->
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </v-app-bar>
+        <v-content>
+          <v-container>
+            <!-- display-1/3, body-1/2 타이포 그래피 서체 종류와 크기로 설정 -->
+            <h1 class="display-1 my-5">안녕하세요</h1>
+            <p class="body-2 my-4">마스터페이지</p>
+            <v-divider></v-divider>
+            <h1 class="display-3 my-4">안녕하세요</h1>
+            <p class="body-1 my-4">마스터페이지</p>
+          </v-container>
+        </v-content>
+        <!-- footer 색상을 secondary로 설정하고 fixed로 위치 고정 -->
+        <v-footer color="secondary" dark fixed>
+          <!-- mx-auto는 블록 레벨 엘리먼트의 내용을 가운데 정렬 -->
+          <div class="mx-auto">Copyright &copy;</div>
+        </v-footer>
+      </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+      });
+    </script>
+  </body>
+</html>

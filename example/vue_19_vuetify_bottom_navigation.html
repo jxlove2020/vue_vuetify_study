@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 모바일 기기 접속시 화면 크기 조절을 위해 뷰포트로 설정 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      maximum-scale="1,"
+      user-scalable="no,"
+      minimal-ui
+    />
+    <!-- vuetify.js 에 필요한 스타일 파일 링크 연결 -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <title>리스트 아이콘</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 첫 화면의 시작은 v-app 엘리먼트 사용 -->
+      <v-app>
+        <v-content>
+          <v-card
+            height="100%"
+            class="d-flex display-2 align-center justify-center"
+          >
+            선택 : {{ sSelect }}</v-card
+          >
+        </v-content>
+        <!-- footer -->
+        <v-footer>
+          <!-- 선택된 메뉴는 sSelect 데이터를 연동해서 바인딩 -->
+          <v-bottom-navigation absolute v-model="sSelect" dark>
+            <!-- 아이콘 버튼 3개 표시 -->
+            <v-btn text value="자전거"
+              >자전거<v-icon>directions_bike</v-icon></v-btn
+            >
+            <v-btn text value="지하철">지하철<v-icon>subway</v-icon></v-btn>
+            <v-btn text value="버스">버스<v-icon>directions_bus</v-icon></v-btn>
+          </v-bottom-navigation>
+        </v-footer>
+      </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        data: {
+          sSelect: '자전거',
+        },
+      });
+    </script>
+  </body>
+</html>

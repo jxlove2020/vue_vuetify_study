@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 모바일 기기 접속시 화면 크기 조절을 위해 뷰포트로 설정 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      maximum-scale="1,"
+      user-scalable="no,"
+      minimal-ui
+    />
+    <!-- vuetify.js 에 필요한 스타일 파일 링크 연결 -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <title>리스트 아이콘</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 첫 화면의 시작은 v-app 엘리먼트 사용 -->
+      <v-app>
+        <!-- 앱바 색상을 파란색(primary)으로 설정하고 fixed로 위치 고정 -->
+        <v-app-bar app color="blue" dark>
+          <!-- 왼쪽에 메뉴 아이콘 넣음 -->
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          <v-toolbar-title>Virtual Company</v-toolbar-title>
+          <!-- 오른쪽에 추가 메뉴 아이콘을 넣기 위해 v-spacer 엘리먼트 사용 -->
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </v-app-bar>
+        <v-content>
+          <v-container>
+            <v-card>
+              <v-list two-line v-for="item in aList" v-bind:key="item.id">
+                <!-- 항목을 하나씩 가져와서 item 단위로 표시 -->
+                <v-list-item @click="">
+                  <!-- 왼쪽에 대표 아이콘을 먼저 표시 -->
+                  <v-list-item-avatar>
+                    <v-icon :class="[item.icon-style]">
+                      {{ item.icon_name }}
+                    </v-icon>
+                  </v-list-item-avatar>
+                  <!-- 제목을 렌더링 -->
+                  <v-list-item-content>
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                  </v-list-item-content>
+                  <!-- 오른쪽에 화살표 아이콘을 넣음 -->
+                  <v-list-item-action>
+                    <v-btn icon>
+                      <v-icon color="grey">keyboard_arrow_right</v-icon>
+                    </v-btn>
+                  </v-list-item-action>
+                </v-list-item>
+              </v-list>
+            </v-card>
+          </v-container>
+        </v-content>
+        <!-- footer 색상을 secondary로 설정하고 fixed로 위치 고정 -->
+        <v-footer color="secondary" dark fixed>
+          <!-- mx-auto는 블록 레벨 엘리먼트의 내용을 가운데 정렬 -->
+          <div class="mx-auto">
+            Copyright &copy; {{ new Date().getFullYear() }}
+          </div>
+        </v-footer>
+      </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        data() {
+          return {
+            // 반복되는 항목은 JSON 배열 데이터로 만들어 반환
+            aList: [
+              {
+                icon_name: 'account_balance',
+                icon_style: 'red white--text',
+                title: '회사소개',
+              },
+              {
+                icon_name: 'photo',
+                icon_style: 'green white--text',
+                title: '제품 이미지',
+              },
+              {
+                divider: false,
+                icon_name: 'movie',
+                icon_style: 'yellow white--text',
+                title: '홍보 동영상',
+              },
+            ],
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

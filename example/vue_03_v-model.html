@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v-model</title>
+    <!-- Vue cdn에 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="main">
+      <p>{{sMsg}}</p>
+      <!-- v-model은 데이터를 가져오는 동시에 입력이 동기화됨 -->
+      <!-- 마지막 글자가 한글일 경우 나타나지 않을 수 있음 / 특수기호나 영문자를 넣어 마침 -->
+      <!-- 엘리먼트의 어트리뷰트는 'v-model:'다음에 명시 -->
+      <input v-model:value="sMsg" />
+    </div>
+    <script>
+      varmain = new Vue({
+        el: '#main',
+        data: {
+          sMsg: 'Hello',
+        },
+      });
+    </script>
+  </body>
+</html>

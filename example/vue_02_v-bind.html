@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v-bind</title>
+    <!-- Vue cdn에 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+      /* 화면에 렌더링할 때 사용할 제목의 색상을 파란색으로 정의 */
+      .blue_style {
+        color: blue;
+      }
+      input {
+        width: 100%;
+        max-width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <!-- v-bind 안에서도 자바스크립트를 사용할 수 있으므로 변수와 문장을 연결 -->
+      <h1 v-bind:class="sColorName + '_style'">Hello</h1>
+      <!-- 콜론(:) 앞의 v-bind는 생략가능 -->
+      <input :value="sDate" />
+    </div>
+    <script>
+      let app = new Vue({
+        el: '#main',
+        data: {
+          // Date 객체의 getFullYear() 메서드로 오래 연도 문장 준비
+          // sDate: new Date(),
+          sDate: 'Current Year : ' + new Date().getFullYear(),
+          sColorName: 'blue',
+        },
+      });
+    </script>
+  </body>
+</html>

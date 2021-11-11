@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 모바일 기기 접속시 화면 크기 조절을 위해 뷰포트로 설정 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      maximum-scale="1,"
+      user-scalable="no,"
+      minimal-ui
+    />
+    <!-- vuetify.js 에 필요한 스타일 파일 링크 연결 -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <title>그리드</title>
+    <style>
+      /* 테두리를 볼 수 있도록 그리드 스타일 설정 */
+      .border_style {
+        border: 1px solid rgb(5, 12, 30);
+        background-color: rgb(153, 204, 14);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 첫 화면의 시작은 v-app 엘리먼트 사용 -->
+      <v-app>
+        <!-- 앱바 색상을 파란색(primary)으로 설정하고 fixed로 위치 고정 -->
+        <v-app-bar app color="primary" dark fixed>
+          <!-- 왼쪽에 메뉴 아이콘 넣음 -->
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          <v-toolbar-title>그리드</v-toolbar-title>
+          <!-- 오른쪽에 추가 메뉴 아이콘을 넣기 위해 v-spacer 엘리먼트 사용 -->
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </v-app-bar>
+        <v-content>
+          <v-container>
+            <!-- 한행은 12개 열이 기준 -->
+            <v-row text-center>
+              <v-col cols="12" class="border_style">xs12</v-col>
+              <v-col cols="6" class="border_style">xs6</v-col>
+              <v-col cols="3" class="border_style">xs3</v-col>
+              <!-- 현재 열이 9개 이므로 열 4개를 추가하면 12개를 초과하므로 자동 줄바꿈 -->
+              <v-col cols="4" class="border_style">xs4</v-col>
+              <!-- 12열 생성. 8개 넘의면 자동으로 줄바꿈 -->
+              <v-col
+                cols="1"
+                v-for="item in 12"
+                v-bind:key="item.id"
+                class="border_style"
+                >xs1</v-col
+              >
+            </v-row>
+            <br />
+            <!-- 20열 생성. 12개가 넘으면 자동으로 줄바꿈 -->
+            <v-row text-center>
+              <v-col
+                cols="1"
+                v-for="item in 20"
+                v-bind:key="item.id"
+                class="border_style"
+                >xs1</v-col
+              >
+            </v-row>
+          </v-container>
+          <v-container fluid>
+            <v-row text-center>
+              <v-row text-center>
+                <v-col sm="4" class="border_style">sm4</v-col>
+                <!-- offset 으로 그리드 사이에 4개의 열 간격을 띄움 -->
+                <v-col sm="4" offset-sm="4" class="border_style">sm4</v-col>
+              </v-row>
+            </v-row>
+          </v-container>
+        </v-content>
+        <!-- footer 색상을 secondary로 설정하고 fixed로 위치 고정 -->
+        <v-footer color="secondary" dark fixed>
+          <!-- mx-auto는 블록 레벨 엘리먼트의 내용을 가운데 정렬 -->
+          <div class="mx-auto">Copyright &copy;</div>
+        </v-footer>
+      </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>helloVueJs</title>
+    <!-- Vue cdn에 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="main">
+      <!-- sTitle값을 받아서 HTML 의 엘리먼트 값으로 변환하여 표시 -->
+      <p>{{sTitle}}</p>
+    </div>
+    <script>
+      // Vue 객체를 생성해 앱을 초기화 하고 시작
+      new Vue({
+        el: '#main',
+        data: {
+          // {{ sTitle }}로 데이터 값 전달
+          sTitle: '안녕하세요',
+        },
+      });
+    </script>
+  </body>
+</html>
