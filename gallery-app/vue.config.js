@@ -32,4 +32,7 @@ module.exports = {
     },
   },
   transpileDependencies: ['vuetify'],
+  devServer: {
+    disableHostCheck: true, // npm run serve 명령으로 localhost:8080(포트) 가 실행되면 새로운 터미널을 띄워 ngrok http 8080(포트)로  실행 하게 해 줌
+  },
 };
