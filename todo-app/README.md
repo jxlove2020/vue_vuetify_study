@@ -14,13 +14,13 @@ vue create todo_app
 
 ### 설치시 선택할 내용
 
-| Question                                         |                               Answer |
-| :----------------------------------------------- | -----------------------------------: |
-| Please pick a preset                             |      [manually select features] 선택 |
-| Check the features needed for your project       | [Router], [Vuex], [PWA_SUPPORT] 선택 |
-| Use history mode for router?                     |                        기본값 Y 선택 |
-| Where do you prefer placing config for..         |     기본값 그대로 [config] 파일 선택 |
-| Save this as a preset for future projects? (Y/N) |                        기본값 N 선택 |
+| Question                                         |                                        Answer |
+| :----------------------------------------------- | --------------------------------------------: |
+| Please pick a preset                             |               [manually select features] 선택 |
+| Check the features needed for your project       | [Babel], [Router], [PWA_SUPPORT], [Vuex] 선택 |
+| Use history mode for router?                     |                                 기본값 Y 선택 |
+| Where do you prefer placing config for..         |              기본값 그대로 [config] 파일 선택 |
+| Save this as a preset for future projects? (Y/N) |                                 기본값 N 선택 |
 
 ### vuetify 설치
 
