@@ -9,7 +9,7 @@ npm i -g @vue/cli
 ### vue 프로젝트 생성
 
 ```
-vue create todo_app
+vue create gallery-app
 ```
 
 ### 설치시 선택할 내용
