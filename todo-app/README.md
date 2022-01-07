@@ -34,7 +34,9 @@ vue add vuetify
 
 ### firebase vuefire 설치
 
-```
+```bash
+// "firebase": "^8.10.0",
+// "vuefire": "^3.0.0-alpha.2",
 npm install firebase vuefire@next
 ```
 
